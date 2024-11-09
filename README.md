@@ -17,8 +17,8 @@ cd Project && bun run dev
 
 ## TO-DO
 - [x] Project init
-- [ ] Shadcn configuration
-- [ ] Custom CSS configuration in Tailwind CSS
+- [x] Shadcn configuration
+- [x] Custom CSS configuration in Tailwind CSS
 - [ ] Landing page Design
 - [ ] Authentication
 - [ ] tRPC
