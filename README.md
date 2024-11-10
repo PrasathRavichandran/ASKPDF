@@ -19,7 +19,7 @@ cd Project && bun run dev
 - [x] Project init
 - [x] Shadcn configuration
 - [x] Custom CSS configuration in Tailwind CSS
-- [ ] Landing page Design
+- [x] Landing page Design
 - [ ] Authentication
 - [ ] tRPC
 - [ ] File uploader
