@@ -1,4 +1,8 @@
+# AskPDF
+
 Web application project for loading PDF files and ask/clarify questions on the PDF using integrated AI.
+
+![Project Image](https://github.com/joschan21/quill/blob/master/public/thumbnail.png)
 
 ## Getting Started
 
