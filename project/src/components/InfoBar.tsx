@@ -10,13 +10,14 @@ export default function InfoBar({ className, children }: Props) {
     border 
     border-gray-200 
     bg-white 
-    px-7 py-2 
+    px-7 py-2 mb-4
     flex justify-center items-center 
     text-center shadow-sm
     backdrop-blur
     transition-all
     hover:bg-white/90
     hover:border-gray-300
+    cursor-vertical-text
     `}
     >
       <PulseDot/>
