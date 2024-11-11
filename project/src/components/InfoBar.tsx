@@ -20,7 +20,7 @@ export default function InfoBar({ className, children }: Props) {
     cursor-vertical-text
     `}
     >
-      <PulseDot/>
+      <PulseDot />
       <p className={"font-semibold text-sm text-gray-600"}>{children}</p>
     </div>
   );
