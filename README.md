@@ -7,7 +7,7 @@
 For running the development server:
 
 ```bash
-cd Project && bun run dev
+cd project && bun run dev
 ```
 
 ## Tech Used
@@ -25,7 +25,7 @@ cd Project && bun run dev
 - [x] Shadcn configuration
 - [x] Custom CSS configuration in Tailwind CSS
 - [x] Landing page Design
-- [ ] Authentication
+- [x] Authentication
 - [ ] tRPC
 - [ ] File uploader
 - [ ] PDF renderer
