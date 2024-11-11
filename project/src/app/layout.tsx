@@ -1,7 +1,8 @@
+import Navbar from "@/components/Navbar";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,7 +17,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "AskPDF - Use AI to ask questions or clarify anything in the PDF",
-  description: "Utilize AI to ask any questions or seek clarification about the PDF, ensuring you have a complete understanding of its contents.",
+  description:
+    "Utilize AI to ask any questions or seek clarification about the PDF, ensuring you have a complete understanding of its contents.",
 };
 
 export default function RootLayout({
@@ -27,8 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body
-        className={cn(`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen font-sans grainy`)}
+        className={cn(
+          `${geistSans.variable} ${geistMono.variable} antialiased min-h-screen font-sans grainy`
+        )}
       >
+        <Navbar />
         {children}
       </body>
     </html>

@@ -1,7 +1,5 @@
 # AskPDF
 
-Web application project for loading PDF files and ask/clarify questions on the PDF using integrated AI.
-
 ![Project Image](https://github.com/PrasathRavichandran/ASKPDF/blob/main/Documents/app-preview.png)
 
 ## Getting Started
@@ -16,10 +14,13 @@ cd Project && bun run dev
 
 - Next JS
 - Tailwind CSS
-- tRPC 
+- [Kinde](https://kinde.com)
+- Lucide React
+- tRPC
 - Prisma
 
 ## TO-DO
+
 - [x] Project init
 - [x] Shadcn configuration
 - [x] Custom CSS configuration in Tailwind CSS
