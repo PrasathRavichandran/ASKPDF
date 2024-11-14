@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import TRPCProvider from "@/components/TRPCProvider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -28,14 +29,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="light">
-      <body
-        className={cn(
-          `${geistSans.variable} ${geistMono.variable} antialiased min-h-screen font-sans grainy`
-        )}
-      >
-        <Navbar />
-        {children}
-      </body>
+      <TRPCProvider>
+        <body
+          className={cn(
+            `${geistSans.variable} ${geistMono.variable} antialiased min-h-screen font-sans grainy`
+          )}
+        >
+          <Navbar />
+          {children}
+        </body>
+      </TRPCProvider>
     </html>
   );
 }
