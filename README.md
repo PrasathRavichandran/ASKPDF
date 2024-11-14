@@ -17,6 +17,7 @@ cd project && bun run dev
 - [Kinde](https://kinde.com)
 - Lucide React
 - tRPC
+- React Query v5
 - Prisma
 
 ## TO-DO
