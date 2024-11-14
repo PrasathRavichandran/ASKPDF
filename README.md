@@ -26,7 +26,7 @@ cd project && bun run dev
 - [x] Custom CSS configuration in Tailwind CSS
 - [x] Landing page Design
 - [x] Authentication
-- [ ] tRPC
+- [x] tRPC
 - [ ] File uploader
 - [ ] PDF renderer
 - [ ] Real time streaming API response
