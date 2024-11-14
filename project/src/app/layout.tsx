@@ -3,6 +3,7 @@ import TRPCProvider from "@/components/TRPCProvider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "react-loading-skeleton/dist/skeleton.css";
 import "./globals.css";
 
 const geistSans = localFont({
