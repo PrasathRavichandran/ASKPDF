@@ -4,12 +4,12 @@ import { trpcClient } from "@/trpc/client";
 import NoListMessage from "./NoListMessage";
 import UploadButton from "./UploadButton";
 
-import { MessageSquare, Plus, Trash } from "lucide-react";
+import { Loader2, MessageSquare, Plus, Trash } from "lucide-react";
 import Link from "next/link";
 import Skeleton from "react-loading-skeleton";
 
 import { format } from "date-fns";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
 const ListTitle = ({ fileName = "" }: { fileName: string }) => {
@@ -49,7 +49,27 @@ const ListFooterSingleGrid = ({ children }: PropsWithChildren) => {
 };
 
 export default function Dashboard() {
+  const [currentlyDeletedItem, setCurrentlyDeletedItem] = useState<
+    string | null
+  >(null);
+  const utils = trpcClient.useUtils();
+
   const { data: files, isLoading } = trpcClient.getUserFiles.useQuery();
+
+  const { mutate: deleteFile, isSuccess } = trpcClient.deleteFiles.useMutation({
+    onMutate({ id }) {
+      setCurrentlyDeletedItem(id);
+    },
+    onSettled() {
+      setCurrentlyDeletedItem(null);
+    },
+  });
+
+  useEffect(() => {
+    if (isSuccess) {
+      utils.getUserFiles.invalidate();
+    }
+  }, [isSuccess]);
 
   return (
     <main className={`mx-auto max-w-7xl md:p-10`}>
@@ -135,8 +155,14 @@ export default function Dashboard() {
                     size={"sm"}
                     className={"w-full"}
                     variant={"destructive"}
+                    onClick={() => deleteFile({ id: file.id })}
+                    disabled={currentlyDeletedItem === file.id}
                   >
-                    <Trash className={`h-4 w-4`} />
+                    {currentlyDeletedItem === file.id ? (
+                      <Loader2 className={`h-4 w-4 animate-spin`} />
+                    ) : (
+                      <Trash className={`h-4 w-4`} />
+                    )}
                   </Button>
                 </ListFooterWrapper>
               </li>
